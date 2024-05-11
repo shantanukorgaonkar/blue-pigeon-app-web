@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-d
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import PostFeed from './pages/PostFeed';
+import FriendList from './pages/FriendList';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/post-feed',
     element: <PostFeed />
+  },
+  {
+    path: '/friend-list',
+    element: <FriendList />
   },
 ])
 const root = ReactDOM.createRoot(

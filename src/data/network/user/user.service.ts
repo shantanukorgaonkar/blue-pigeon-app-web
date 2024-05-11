@@ -14,14 +14,17 @@ class UserService extends BaseService {
     public async getUserProfile(): Promise<{ status: string, message: string, data: UserModel }> {
         return this.get('/api/v1/users/me') as Promise<{ status: string, message: string, data: UserModel }>
     }
-    public async getFriends(): Promise<{ status: string, message: string, data: UserModel }> {
-        return this.get('/api/v1/users/friends') as Promise<{ status: string, message: string, data: UserModel }>
+    public async getFriends(): Promise<{ status: string, message: string, data: string[] }> {
+        return this.get('/api/v1/users/friends') as Promise<{ status: string, message: string, data: string[] }>
     }
-    public async addFriend(data: any): Promise<{ status: string, message: string, data: { id: string, senderId: string, receiverId: string } }> {
-        return this.post('/api/v1/users/friends', data) as Promise<{ status: string, message: string, data: { id: string, senderId: string, receiverId: string } }>
+    public async addFriend(receiverId: string): Promise<{ status: string, message: string, data: { id: string, senderId: string, receiverId: string } }> {
+        return this.post('/api/v1/users/addFriend', {receiverId}) as Promise<{ status: string, message: string, data: { id: string, senderId: string, receiverId: string } }>
     }
-    public async getPosts(): Promise<{ status: string, message: string, data: PostModel }> {
-        return this.get('/api/v1/users/posts') as Promise<{ status: string, message: string, data: PostModel }>
+    public async getPosts(): Promise<{ status: string, message: string, data: PostModel[] }> {
+        return this.get('/api/v1/users/posts') as Promise<{ status: string, message: string, data: PostModel[] }>
+    }
+    public async getAllUsers(): Promise<{ status: string, message: string, data: UserModel[] }> {
+        return this.get('/api/v1/users/') as Promise<{ status: string, message: string, data: UserModel[] }>
     }
 }
 

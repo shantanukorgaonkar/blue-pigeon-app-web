@@ -61,6 +61,7 @@ const CompleteProfile = () => {
                 <Grid container gap={4}>
                     <Link to='/post-feed'>Post Feed</Link>
                     <Link to='/complete-profile'>Profile Setup</Link>
+                    <Link to='/friend-list'>Friend List</Link>
                 </Grid>
             </Grid>
             <Grid item xs={12} mt={4}>
@@ -85,7 +86,6 @@ const CompleteProfile = () => {
                     <Grid item xs={12}>
                         <Autocomplete
                             multiple
-
                             forcePopupIcon={false}
                             value={selectedIndustries || []}
                             id="industriesAutocomplete"
@@ -150,6 +150,9 @@ const CompleteProfile = () => {
                             }
                         </Grid>
                     </Grid>
+                </Grid>
+                <Grid item xs={12} mt={4}>
+                            <Typography>Add friend. Kindly add id of the user you want to send request </Typography>
                 </Grid>
             </Grid>
             <ErrorSnackbar error={error} setError={setError} />

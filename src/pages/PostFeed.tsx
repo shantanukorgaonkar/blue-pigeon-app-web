@@ -54,6 +54,7 @@ const PostFeed = () => {
                 <Grid container gap={4}>
                     <Link to='/post-feed'>Post Feed</Link>
                     <Link to='/complete-profile'>Profile Setup</Link>
+                    <Link to='/friend-list'>Friend List</Link>
                 </Grid>
             </Grid>
             <Grid item xs={2} mt={2} padding={1}>
