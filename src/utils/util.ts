@@ -11,8 +11,9 @@ export const getMediaURL = (fileName: string) => {
 
 export const getMediaType = (fileName: string) => {
     const videoMimeTypes = ['video/mp4', 'video/mov', 'video/wmv', 'video/gif', 'video/quicktime'];
+    const imageTypes = ['jpg', 'jpeg', 'png']
     const extension = fileName.substring(fileName.lastIndexOf('.') + 1);
-    if (extension.match(/\/(jpg|jpeg|png)$/)) {
+    if (imageTypes.includes(extension)) {
         return MediaType.IMAGE
     }
     else if (videoMimeTypes.includes(extension)) {

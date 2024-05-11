@@ -1,6 +1,6 @@
 import { Autocomplete, Button, Chip, CircularProgress, Grid, TextField, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ErrorSnackbar from '../components/ErrorSnackbar'
 import UserService from '../data/network/user/user.service'
 import IndustriesService from '../data/network/industries/industries.service'
@@ -57,6 +57,12 @@ const CompleteProfile = () => {
     }
     return (
         <Grid container justifyContent="center" gap={4} height="100%">
+            <Grid item xs={12} mt={4} padding={1}>
+                <Grid container gap={4}>
+                    <Link to='/post-feed'>Post Feed</Link>
+                    <Link to='/complete-profile'>Profile Setup</Link>
+                </Grid>
+            </Grid>
             <Grid item xs={12} mt={4}>
                 <Typography variant='h4' textAlign="center">Set up profile</Typography>
             </Grid>
