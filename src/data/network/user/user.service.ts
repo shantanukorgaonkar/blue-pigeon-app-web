@@ -6,8 +6,8 @@ class UserService extends BaseService {
     constructor() {
         super();
     }
-    public async updateUser(data: any): Promise<{ status: string, message: string, data: UserModel }> {
-        const response = this.patch('/api/v1/users/update', data) as Promise<{ status: string, message: string, data: UserModel }>
+    public async updateUser(username: string, industries: string[], interests: string[]): Promise<{ status: string, message: string, data: UserModel }> {
+        const response = this.patch('/api/v1/users/update', { username, industries, interests }) as Promise<{ status: string, message: string, data: UserModel }>
         return response
     }
 

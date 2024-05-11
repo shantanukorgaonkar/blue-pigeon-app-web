@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import PostFeed from './pages/PostFeed';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
     element: <Register />
   },
   {
-    path: '/profile',
+    path: '/complete-profile',
     element: <Profile />
+  },
+  {
+    path: '/post-feed',
+    element: <PostFeed />
   },
 ])
 const root = ReactDOM.createRoot(

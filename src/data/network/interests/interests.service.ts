@@ -6,8 +6,8 @@ class InterestsService extends BaseService {
     constructor() {
         super();
     }
-    public async getInterests(data: any): Promise<{ status: string, message: string, data: InterestsModel[] }> {
-        const response = this.patch('/api/v1/interests', data) as Promise<{ status: string, message: string, data: InterestsModel[] }>
+    public async getInterests(): Promise<{ status: string, message: string, data: InterestsModel[] }> {
+        const response = this.get('/api/v1/interests') as Promise<{ status: string, message: string, data: InterestsModel[] }>
         return response
     }
 }

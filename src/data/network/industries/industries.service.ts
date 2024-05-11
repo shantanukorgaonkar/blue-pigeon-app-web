@@ -5,8 +5,8 @@ class IndustriesService extends BaseService {
     constructor() {
         super();
     }
-    public async getIndustries(data: any): Promise<{ status: string, message: string, data: IndustriesModel[] }> {
-        const response = this.patch('/api/v1/industries', data) as Promise<{ status: string, message: string, data: IndustriesModel[] }>
+    public async getIndustries(): Promise<{ status: string, message: string, data: IndustriesModel[] }> {
+        const response = this.get('/api/v1/industries') as Promise<{ status: string, message: string, data: IndustriesModel[] }>
         return response
     }
 }
