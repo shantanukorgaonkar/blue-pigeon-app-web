@@ -6,3 +6,8 @@ export class PostModel {
     createdAt: string;
     updatedAt: string;
 }
+
+export enum MediaType {
+    IMAGE = 'image',
+    VIDEO = 'video',
+}
